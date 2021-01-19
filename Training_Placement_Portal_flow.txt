@@ -1,0 +1,72 @@
+User Role 
+	1 = TPO / Admin
+	2 = HR
+	3 = Student
+
+Flow
+	
+	A. Admin / TPO Login
+		1. Add companey
+			I. Add basic details about company stored in companydetails table
+				Attr: compid, companyname, ctype, cwebsite, address.
+					
+				
+		2. User Registration
+			I. Admin can register TPO or HR with basic info.
+				stored in useraccoutn table
+				Attr: uid, name, email, phone, collegename, gender, uname, password, role, compid
+			
+		3. Student Registration
+			Attr: sid, name, email, phone, gender, s10thpassingyear, s10thmarks, s12thpassingyear, s12thfield, s12marks, GraduationYear, GraduationCourseName, GraduationMark, status, tpoid, appereingclass, password, role
+			
+			I. TPO uploads csv of students
+				IMP *** Please note csv attributes sequence of collumn has to be same as below please do not change it you will regret letter**
+					CSV attributes are:
+						a. SrNO
+						b. name
+						c. email
+						d. phone
+						e. gender
+						f. 10th passing year
+						g. 10th marks
+						h. 12th/diploma passing year
+						i. 12th/diploma field
+						j. 12th/diploma marks
+						k. graduation year
+						l. graduation cource
+						m. graduation marks
+						n. Appering class
+				
+			II. Student data get stored on the server with random password generation
+			III. student get message for login using phone number and password 
+	
+		4. View Campus
+			Show companies details and show campus selection details of student 
+		
+		5. Edit Profile
+			update profile option
+		
+	B. HR Login	
+		
+		1. set campus drive will be stored in campusdetails table
+			Attr: cid, jobrole, jobexp, cdate, ctime, venue, currenttime, status, uid, compid
+			
+		2. View Campus details	
+			Show inserted campus by HR
+		3. Show Campus Details by ID
+			a. Show Campus details 
+			b. show shortlisted student	
+				Using SVM student will be shortlisted which are having more than 60%
+				and HR can send Test Link to them for Technical test round.
+			c. show student selected from drive after test
+				show the student who passed the test and can HR can send them message for further round
+		
+	B. Student Login		
+		1. show companey details.
+			student can check the companies and visit their website
+		2. Show campus details	
+			student can apply for the campus
+			
+		3. Job Notification
+			show test links and notification about selection
+		
